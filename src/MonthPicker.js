@@ -409,7 +409,7 @@ along with this program.  If not, see
 
             this._titleButton =
                 $('.month-picker-title', _menu)
-                .click($proxy(this._showYearsClickHandler, this))
+                .on('click', $proxy(this._showYearsClickHandler, this))
                 .find('a').jqueryUIButton()
                 .removeClass(_defaultClass);
 
@@ -475,7 +475,7 @@ along with this program.  If not, see
                // Update the alt field if the user manually changes
                // the input field.
                _el.addClass(_textfieldClass);
-               _el.change($proxy(this._updateAlt, this));
+               _el.on('change', $proxy(this._updateAlt, this));
             }
         },
 
