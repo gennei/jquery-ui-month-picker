@@ -568,7 +568,7 @@ along with this program.  If not, see
                     // won't blur the input field and trogger vlaidation
                     // befroe the month was chosen (click event was triggered).
                     // It is turned back on when Hide() is called.
-                    _elem.off('blur' + _eventsNs).focus();
+                    _elem.off('blur' + _eventsNs).trigger('focus');
 
                     var _anim = _opts.ShowAnim || _opts.Animation,
                         _noAnim = _anim === 'none';
@@ -990,7 +990,7 @@ along with this program.  If not, see
 
         _addToYear: function(amount) {
             this._setPickerYear( this._getPickerYear() + amount );
-            this.element.focus();
+            this.element.trigger('focus');
             this._decorateButtons();
 
             _event('OnAfter' + (amount > 0 ? 'Next' : 'Previous') + 'Year', this)();
@@ -999,7 +999,7 @@ along with this program.  If not, see
         _addToYears: function(amount) {
             this._pickerYear = this._getPickerYear() + amount;
             this._showYears();
-            this.element.focus();
+            this.element.trigger('focus');
 
             _event('OnAfter' + (amount > 0 ? 'Next' : 'Previous') + 'Years', this)();
         },
