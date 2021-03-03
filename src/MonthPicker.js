@@ -865,7 +865,7 @@ along with this program.  If not, see
         _chooseMonth: function (month) {
             var _year = this._getPickerYear();
             var date = new Date(_year, month-1);
-            this.element.val(this._formatMonth( date )).blur();
+            this.element.val(this._formatMonth( date )).on('blur');
             this._updateAlt(0, date);
 
             _setActive( this._selectedBtn, false );
